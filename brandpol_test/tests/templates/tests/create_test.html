@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Создание теста{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Создание теста</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <div>{{ form.title }}</div>
+            <div>
+                <span>Тест доступен {{ form.is_available }}</span>
+            </div>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Добавить тест</button>
+        </form>
+
+    </div>
+{% endblock %}

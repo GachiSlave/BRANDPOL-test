@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Тесты{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Тесты</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur consequuntur cumque dicta dolores libero odio odit possimus saepe similique veniam.</p>
+        <button class='btn btn-warning'>Lorem ipsum.</button>
+
+        {% for el in tests %}
+            <div class="test-element">
+                <h3>{{ el.title }}</h3>
+                <h3>{{ el.is_available }}</h3>
+                <h3>id: {{ el.id }}</h3>
+                <a href="{% url 'test_detail' el.id %}" class="btn btn-warning">Перейти к тесту</a>
+            </div>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
